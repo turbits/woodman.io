@@ -15,7 +15,11 @@ class PostController extends Controller
      */
     public function index()
     {
-      
+      // store all blog posts in db in a variable
+      $posts = Post::all();
+
+      // return a view (index) and pass in posts var
+      return view('posts.index')->withPosts($posts);
     }
 
     /**
@@ -63,7 +67,10 @@ class PostController extends Controller
      */
     public function show($id)
     {
+      // store post in var
       $post = Post::find($id);
+
+      // return view and pass in post var
       return view('posts.show')->with('post', $post);
     }
 
@@ -75,7 +82,11 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+      // store post in var
+      $post = Post::find($id);
+
+      // return view and pass in post var
+      return view('posts.edit')->with('post', $post);
     }
 
     /**
@@ -87,7 +98,26 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      // validate data
+      $this->validate($request, array(
+          'title' => 'required|max:255',
+          'body' => 'required'
+        ));
+
+      // grab post from DB
+      $post = Post::find($id);
+
+      // save to DB
+      $post->title = $request->input('title');
+      $post->body = $request->input('body');
+      $post->save(); // will automagically update timestamp
+
+      // set flash data with success msg
+      Session::flash('success', 'post successfully updated!');
+
+      // redirect to post
+      return redirect()->route('posts.show', $post->id);
+      
     }
 
     /**

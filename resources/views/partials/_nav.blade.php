@@ -17,6 +17,7 @@
         <li class="active"><a href="/">home <span class="sr-only">(current)</span></a></li>
         <li><a href="/about">about</a></li>
         <li><a href="/contact">contact</a></li>
+        <li><a href="/posts">all posts</a></li>
         <li><a href="/posts/create">post</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">

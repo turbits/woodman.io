@@ -42,4 +42,4 @@
   </div>
 </div>
 <!-- end content -->
-@endsection
+@stop
