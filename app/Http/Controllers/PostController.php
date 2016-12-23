@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use Session;
 
 class PostController extends Controller
 {
@@ -14,7 +15,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+      
     }
 
     /**
@@ -37,9 +38,9 @@ class PostController extends Controller
     public function store(Request $request)
     {
       // validate
-        $this->validate($request, array(
-          'title' => 'required|max:255',
-          'body' => 'required'  
+      $this->validate($request, array(
+        'title' => 'required|max:255',
+        'body' => 'required'  
         ));
       // store
       $post = new Post;
@@ -47,6 +48,8 @@ class PostController extends Controller
       $post->body = $request->body;
 
       $post->save();
+
+      Session::flash('success', 'Blog post GET!');
 
       // redirect
       return redirect()->route('posts.show', $post->id);
@@ -60,7 +63,8 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+      $post = Post::find($id);
+      return view('posts.show')->with('post', $post);
     }
 
     /**
