@@ -2,6 +2,6 @@
 <hr>
 <footer class="footer">
   <div class="container">
-    <p class="text-muted">&copy; 2016 Trevor Woodman - All Rights Reserved</p>
+    <p class="text-muted">&copy; {{ date('Y') }} Trevor Woodman - All Rights Reserved</p>
   </div>
 </footer>
