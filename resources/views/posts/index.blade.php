@@ -44,7 +44,13 @@
           @endforeach
         </tbody>
 
-      </table>
+      </table> <!-- end table -->
+      <div class="text-center">
+        {!! $posts->links(); !!}
+      </div>
+      <div class="text-center">
+        page {!! $posts->currentPage(); !!} of {!! $posts->lastPage() !!}
+      </div>
     </div>
   </div>
 @stop

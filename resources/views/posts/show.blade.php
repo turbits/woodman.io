@@ -25,7 +25,7 @@
           <dt>last updated</dt>
           {{-- time --}}
           <dd><strong>{{ date('j M y H:i', strtotime($post->updated_at)) }}</strong></dd>
-        </dl>
+        </dl>a
         <hr>
         {{-- buttons --}}
         <div class="row">
@@ -33,9 +33,17 @@
             {!! Html::linkRoute('posts.edit', 'edit', array($post->id), array('class' => 'btn btn-primary btn-block')) !!}
           </div>
           <div class="col-sm-6">
-            {!! Html::linkRoute('posts.destroy', 'delete', array($post->id), array('class' => 'btn btn-danger btn-block')) !!}
+            {!! Form::open(array('route' => array('posts.destroy', $post->id), 'method' => 'DELETE')) !!}
+            {!! Form::submit('delete', array('class' => 'btn btn-danger btn-block')) !!}
+            {!! Form::close() !!}
           </div>
-        </div>
+        </div> <!-- end row -->
+
+        <div class="row">
+          <div class="col-md-12">
+            {{ Html::linkRoute('posts.index', '<< all posts', array(), array('class' => 'btn btn-default btn-block btn-h1-spacing')) }}
+          </div>
+        </div> <!-- end row -->
       </div>
     </div>
   </div>

@@ -16,7 +16,7 @@ class PostController extends Controller
     public function index()
     {
       // store all blog posts in db in a variable
-      $posts = Post::all();
+      $posts = Post::orderBy('id', 'desc')->paginate(10);
 
       // return a view (index) and pass in posts var
       return view('posts.index')->withPosts($posts);
@@ -117,7 +117,7 @@ class PostController extends Controller
 
       // redirect to post
       return redirect()->route('posts.show', $post->id);
-      
+
     }
 
     /**

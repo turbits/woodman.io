@@ -16,29 +16,18 @@
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate aliquid magnam impedit enim deserunt, soluta eos asperiores. Assumenda consequuntur dolorum, provident, quod itaque possimus. Excepturi tenetur id non in enim.
   </div>
   <div class="col-md-8 col-md-offset-1">
+
+    @foreach($posts as $post)
+
     <div class="post">
-      <h3>POST TITLE</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis quas sed voluptates fuga distinctio non ea numquam, commodi veritatis culpa, quibusdam ex dolor iusto dicta tempora neque, dolore autem suscipit...</p>
-      <a href="#" class="btn btn-primary">READ MORE</a>
+      <h3>{{ $post->title }}</h3>
+      <p>{{ substr($post->body, 0, 300) }}{{ strlen($post->body) > 300 ? '...' : '' }}</p>
+      <a href="" class="btn btn-primary">READ MORE</a>
     </div>
     <hr>
-    <div class="post">
-      <h3>POST TITLE</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis quas sed voluptates fuga distinctio non ea numquam, commodi veritatis culpa, quibusdam ex dolor iusto dicta tempora neque, dolore autem suscipit...</p>
-      <a href="#" class="btn btn-primary">READ MORE</a>
-    </div>
-    <hr>
-    <div class="post">
-      <h3>POST TITLE</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis quas sed voluptates fuga distinctio non ea numquam, commodi veritatis culpa, quibusdam ex dolor iusto dicta tempora neque, dolore autem suscipit...</p>
-      <a href="#" class="btn btn-primary">READ MORE</a>
-    </div>
-    <hr>
-    <div class="post">
-      <h3>POST TITLE</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis quas sed voluptates fuga distinctio non ea numquam, commodi veritatis culpa, quibusdam ex dolor iusto dicta tempora neque, dolore autem suscipit...</p>
-      <a href="#" class="btn btn-primary">READ MORE</a>
-    </div>
+
+    @endforeach
+
   </div>
 </div>
 <!-- end content -->
