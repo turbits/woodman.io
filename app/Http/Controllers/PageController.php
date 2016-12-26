@@ -12,12 +12,11 @@ class PageController extends Controller {
 	}
 	// about page
 	public function getAbout() {
-		$first = 'Trevor';
-		$last = 'Woodman';
-
-		$fullname = $first.' '.$last;
-		// can pass in multiple vars/arrays
-		return view('pages/about')->withFullname($fullname);
+		return view('pages/about');
+	}
+	// portfolio page
+	public function getPortfolio() {
+		return view('pages/portfolio');
 	}
 	// contact page
 	public function getContact() {

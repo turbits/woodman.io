@@ -42,13 +42,16 @@ class PostController extends Controller
     public function store(Request $request)
     {
       // validate
-      $this->validate($request, array(
+      $this->validate($request, [
         'title' => 'required|max:255',
-        'body' => 'required'  
-        ));
+        'slug' => 'required|alpha_dash|min:5|max:255',
+        'body' => 'required'
+        ]);
+
       // store
       $post = new Post;
       $post->title = $request->title;
+      $post->slug = $request->slug;
       $post->body = $request->body;
 
       $post->save();
@@ -99,16 +102,18 @@ class PostController extends Controller
     public function update(Request $request, $id)
     {
       // validate data
-      $this->validate($request, array(
+      $this->validate($request, [
           'title' => 'required|max:255',
+          'slug' => 'required|alpha_dash|min:5|max:255',
           'body' => 'required'
-        ));
+        ]);
 
       // grab post from DB
       $post = Post::find($id);
 
       // save to DB
       $post->title = $request->input('title');
+      $post->slug = $request->input('slug');
       $post->body = $request->input('body');
       $post->save(); // will automagically update timestamp
 

@@ -9,15 +9,18 @@
     <h1>Create Post</h1>
     <hr>
     {{-- form --}}
-    {!! Form::open(array('route' => 'posts.store', 'data-parsley-validate' => '')) !!}
+    {!! Form::open(['route' => 'posts.store', 'data-parsley-validate' => '']) !!}
       {{-- title --}}
       {{ Form::label('title', 'title:') }}
-      {{ Form::text('title', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '255')) }}
+      {{ Form::text('title', null, ['class' => 'form-control', 'required' => '', 'maxlength' => '255']) }}
+      {{-- slug --}}
+      {{ Form::label('slug', 'url:') }}
+      {{ Form::text('slug', null, ['class' => 'form-control', 'required' => '', 'minlength' => '5', 'maxlength' => '255']) }}
       {{-- body --}}
       {{ Form::label('body', 'body:') }}
-      {{ Form::textarea('body', null, array('class' => 'form-control', 'required' => '')) }}
+      {{ Form::textarea('body', null, ['class' => 'form-control', 'required' => '']) }}
       {{-- submit --}}
-      {{ Form::submit('create post', array('class' => 'btn btn-success btn-lg btn-block')) }}
+      {{ Form::submit('create post', ['class' => 'btn btn-success btn-lg btn-block']) }}
     {!! Form::close() !!}
  </div>
 </div>

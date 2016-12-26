@@ -2,15 +2,18 @@
 @section('title', ' - edit_post')
 @section('content')
   <div class="row">
-    {!! Form::model($post, array('route' => array('posts.update', $post->id), 'method' => 'PATCH')) !!}
+    {!! Form::model($post, ['route' => ['posts.update', $post->id], 'method' => 'PATCH']) !!}
 
     {{-- post title & body --}}
     <div class="col-md-8">
       {{ Form::label('title', 'title:') }}
-      <h1>{{ Form::text('title', null, array('class' => 'form-control input-lg')) }}</h1>
+      <h1>{{ Form::text('title', null, ['class' => 'form-control input-lg']) }}</h1>
+      {{-- slug --}}
+      {{ Form::label('slug', 'url:') }}
+      {{ Form::text('slug', null, ['class' => 'form-control', 'required' => '', 'minlength' => '5', 'maxlength' => '255']) }}
       <hr>
       {{ Form::label('body', 'body:') }}
-      <p>{{ Form::textarea('body', null, array('class' => 'form-control')) }}</p>
+      <p>{{ Form::textarea('body', null, ['class' => 'form-control']) }}</p>
 
     </div>
     
@@ -35,10 +38,10 @@
         {{-- buttons --}}
         <div class="row">
           <div class="col-sm-6">
-            {!! Html::linkRoute('posts.show', 'cancel', array($post->id), array('class' => 'btn btn-danger btn-block')) !!}
+            {!! Html::linkRoute('posts.show', 'cancel', [$post->id], ['class' => 'btn btn-danger btn-block']) !!}
           </div>
           <div class="col-sm-6">
-            {{ Form::submit('save changes', array('class' => 'btn btn-success btn-block')) }}
+            {{ Form::submit('save changes', ['class' => 'btn btn-success btn-block']) }}
           </div>
         </div>
       </div>

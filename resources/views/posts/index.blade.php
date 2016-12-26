@@ -38,6 +38,7 @@
               <td>
                 <a href="{{ route('posts.show', $post->id) }}" class="btn btn-sm btn-default">view</a>
                 <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-sm btn-default">edit</a>
+                <a href="{{ route('posts.destroy', $post->id) }}" class="btn btn-sm btn-danger">delete</a>
               </td>
             </tr>
 

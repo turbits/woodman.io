@@ -1,4 +1,5 @@
 @extends('main')
+@section('title', ' - front_page')
 @section('content')
 <!-- begin content -->
 <div class="row">
@@ -6,7 +7,7 @@
     <!-- begin jumbotron -->
     <div class="jumbotron">
       <h1>Trevor Woodman</h1>
-      <p>But...why is it called warlock?<br></p>
+      <p>Welcome<br></p>
       <p><a class="btn btn-primary btn-lg" href="#" role="button">Check it</a></p>
     </div>
   </div>
