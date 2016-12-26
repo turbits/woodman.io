@@ -6,7 +6,7 @@
     <div class="col-md-8">
       <h1>{{ $post->title }}</h1>
       <hr>
-      <p>{{ $post->body }}</p>
+      <p class="text-wrap">{{ $post->body }}</p>
     </div>
 
     {{-- sidebar --}}
@@ -15,23 +15,23 @@
         {{-- url slug --}}
         <dl class="dl-horizontal">
           {{-- title --}}
-          <dt>url</dt>
+          <label>url</label>
           {{-- time --}}
-          <dd><a href="{{ route('blog.post', $post->slug) }}">{{ route('blog.post', $post->slug) }}</a></dd>
+          <p class="text-wrap"><a href="{{ route('blog.post', $post->slug) }}">{{ route('blog.post', $post->slug) }}</a></p>
         </dl>
         {{-- created @ --}}
         <dl class="dl-horizontal">
           {{-- title --}}
-          <dt>created at</dt>
+          <label>created at</label>
           {{-- time --}}
-          <dd>{{ date('j M y H:i', strtotime($post->created_at)) }}</dd>
+          <p>{{ date('j M y H:i', strtotime($post->created_at)) }}</p>
         </dl>
         {{-- updated @ --}}
         <dl class="dl-horizontal">
           {{-- title --}}
-          <dt>last updated</dt>
+          <label>last updated</label>
           {{-- time --}}
-          <dd><strong>{{ date('j M y H:i', strtotime($post->updated_at)) }}</strong></dd>
+          <p><strong>{{ date('j M y H:i', strtotime($post->updated_at)) }}</strong></p>
         </dl>
         <hr>
         {{-- buttons --}}

@@ -16,23 +16,23 @@
       <p>{{ Form::textarea('body', null, ['class' => 'form-control']) }}</p>
 
     </div>
-    
+
     {{-- sidebar --}}
     <div class="col-md-4">
       <div class="well">
         {{-- created @ --}}
         <dl class="dl-horizontal">
           {{-- title --}}
-          <dt>created on</dt>
+          <label>created on</label>
           {{-- time --}}
-          <dd>{{ date('j M y H:i', strtotime($post->created_at)) }}</dd>
+          <p>{{ date('j M y H:i', strtotime($post->created_at)) }}</p>
         </dl>
         {{-- updated @ --}}
         <dl class="dl-horizontal">
           {{-- title --}}
-          <dt>last updated</dt>
+          <label>last updated</label>
           {{-- time --}}
-          <dd><strong>{{ date('j M y H:i', strtotime($post->updated_at)) }}</strong></dd>
+          <p><strong>{{ date('j M y H:i', strtotime($post->updated_at)) }}</strong></p>
         </dl>
         <hr>
         {{-- buttons --}}
