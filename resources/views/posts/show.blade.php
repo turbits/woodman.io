@@ -8,7 +8,7 @@
       <hr>
       <p>{{ $post->body }}</p>
     </div>
-    
+
     {{-- sidebar --}}
     <div class="col-md-4">
       <div class="well">
@@ -17,12 +17,12 @@
           {{-- title --}}
           <dt>url</dt>
           {{-- time --}}
-          <dd><a href="{{ url($post->slug) }}">post URL</a></dd>
+          <dd><a href="{{ route('blog.post', $post->slug) }}">{{ route('blog.post', $post->slug) }}</a></dd>
         </dl>
         {{-- created @ --}}
         <dl class="dl-horizontal">
           {{-- title --}}
-          <dt>created on</dt>
+          <dt>created at</dt>
           {{-- time --}}
           <dd>{{ date('j M y H:i', strtotime($post->created_at)) }}</dd>
         </dl>

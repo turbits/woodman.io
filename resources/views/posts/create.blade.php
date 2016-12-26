@@ -13,12 +13,15 @@
       {{-- title --}}
       {{ Form::label('title', 'title:') }}
       {{ Form::text('title', null, ['class' => 'form-control', 'required' => '', 'maxlength' => '255']) }}
+
       {{-- slug --}}
       {{ Form::label('slug', 'url:') }}
       {{ Form::text('slug', null, ['class' => 'form-control', 'required' => '', 'minlength' => '5', 'maxlength' => '255']) }}
+
       {{-- body --}}
       {{ Form::label('body', 'body:') }}
       {{ Form::textarea('body', null, ['class' => 'form-control', 'required' => '']) }}
+      
       {{-- submit --}}
       {{ Form::submit('create post', ['class' => 'btn btn-success btn-lg btn-block']) }}
     {!! Form::close() !!}

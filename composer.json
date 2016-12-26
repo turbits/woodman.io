@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "name": "woodmanio",
+    "description": "woodman.io web app",
+    "keywords": ["woodmanio", "blog"],
     "license": "MIT",
     "type": "project",
     "require": {

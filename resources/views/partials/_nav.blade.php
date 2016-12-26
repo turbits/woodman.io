@@ -9,13 +9,15 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">woodman.io</a>
+      <a class="navbar-brand" href="/">woodman.io</a>
     </div>
     <!-- ////////// LINKS ////////// -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="/">home <span class="sr-only">(current)</span></a></li>
         <li><a href="/about">about</a></li>
+        <li><a href="/portfolio">portfolio</a></li>
+        <li><a href="/blog">blog</a></li>
         <li><a href="/contact">contact</a></li>
         <li><a href="/posts">all posts</a></li>
         <li><a href="/posts/create">post</a></li>
