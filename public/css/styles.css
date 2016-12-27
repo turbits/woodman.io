@@ -1,8 +1,37 @@
+.navbar {
+  border-radius: 0;
+}
+
 .btn-h1-spacing {
   margin-top: 18px;
+}
+
+.btn-top-spacing {
+  margin-top: 8px;
 }
 
 .text-wrap {
   white-space: normal;
   word-break: break-all;
+}
+
+html {
+position: relative;
+min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+  text-align: center;
+}
+.container .text-muted {
+  margin: 20px 0;
 }

@@ -1,4 +1,13 @@
 <?php
+// auth routes
+Route::get('auth/login', ['uses' => 'Auth\LoginController@showLoginForm', 'as' => 'login']);
+Route::post('auth/login', 'Auth\LoginController@login');
+Route::get('auth/logout', ['uses' => 'Auth\LoginController@logout', 'as' => 'logout']);
+
+// registration routes
+Route::get('auth/register', 'Auth\RegisterController@showRegistrationForm');
+Route::post('auth/register', 'Auth\RegisterController@register');
+
 //// web routes ////
 Route::resource('posts', 'PostController');
 Route::get('/', 'PageController@getHome');

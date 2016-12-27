@@ -4,12 +4,12 @@
   </div>
 @endif
 
-@if (count($errors) > 0)
+@if (!$errors->isEmpty())
   <div class="alert alert-danger" role="alert">
     <strong>Errors:</strong>
       <ul>
         @foreach ($errors->all() as $error)
-          <li>{{ $error }}</li>    
+          <li>{{ $error }}</li>
         @endforeach
       </ul>
   </div>
