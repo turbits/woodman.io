@@ -8,6 +8,11 @@ Route::get('auth/logout', ['uses' => 'Auth\LoginController@logout', 'as' => 'log
 Route::get('auth/register', 'Auth\RegisterController@showRegistrationForm');
 Route::post('auth/register', 'Auth\RegisterController@register');
 
+// password reset routes
+Route::get('password/reset/{token?}', 'Auth\ResetPasswordController@showResetForm');
+Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
+
 //// web routes ////
 Route::resource('posts', 'PostController');
 Route::get('/', 'PageController@getHome');
@@ -17,3 +22,4 @@ Route::get('about', 'PageController@getAbout');
 Route::get('portfolio', 'PageController@getPortfolio');
 Route::get('contact', 'PageController@getContact');
 Route::post('contact', 'PageController@postContact');
+Route::get('support', 'PageController@getSupport');

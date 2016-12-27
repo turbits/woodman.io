@@ -35,3 +35,13 @@ body {
 .container .text-muted {
   margin: 20px 0;
 }
+
+.muted-text {
+  color: #999;
+  text-decoration: none;
+}
+
+.muted-text:hover {
+  color: #3498db;
+  text-decoration: none;
+}

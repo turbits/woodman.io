@@ -29,4 +29,8 @@ class PageController extends Controller {
 	// contact page post
 	public function postContact() {
 	}
+	// support page
+	public function getSupport() {
+		return view('pages.support');
+	}
 }
